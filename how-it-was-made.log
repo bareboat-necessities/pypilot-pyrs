@@ -1,0 +1,63 @@
+user@lysmarine:~/pyrs $ python3 ./pyrs.py /home/user/pypilot
+Transpiling whole directiory:
+Transpiled but not formatted: /home/user/pypilot-pyrs/./setup.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/./dependencies.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/calibration_plot.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/scope.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/autopilot_calibration.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/boatplot.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/scope_wx.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/scope_ui.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/ui/kivy/main.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/client.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/gpsd.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/nonblockingpipe.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/gettext_loader.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/failedimports.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/server.rs
+Error: Could not transpile: /home/user/pypilot/pypilot/vector.py
+Due to: list index out of range
+Error: Could not transpile: /home/user/pypilot/pypilot/calibration_fit.py
+Due to: list index out of range
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/autopilot.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/pyjson.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/nmea.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/values.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/servo.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/boatimu.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/bufferedsocket.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/gps_filter.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/signalk.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/serialprobe.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/locale/trans-po.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/arduino_servo/arduino_servo_python.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/pilots/fuzzy.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/pilots/__init__.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/pypilot/pilots/intellect.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/web/tinypilot.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/web/web.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/scripts/gpsdate.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/font.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/lcd_esp32.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/testlirc.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/hat.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/wifi_esp32.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/lcd.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/gpio.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/menu.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/web.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/arduino.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/boot.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/page.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/testrf.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/gpio_esp32.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/locale/apertium-po.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/locale/trans-po.rs
+Transpiled but not formatted: /home/user/pypilot-pyrs/hat/ugfx/generate_version.rs
+Error: Could not transpile: /home/user/pypilot/arduino/weathersensors/make_charset.py
+Due to: sequence item 0: expected str instance, NoneType found
+
+Finished!
+Successful:  38
+Transpiled, but not formatted:  50
+Failed to convert:  3
