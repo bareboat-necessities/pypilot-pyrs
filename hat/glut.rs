@@ -5,6 +5,7 @@ use pypilot::hat::ugfx::ugfx;
 use OpenGL::GL::*;
 use OpenGL::GLU::*;
 use OpenGL::GLUT::*;
+
 struct screen {}
 
 impl screen {
@@ -74,6 +75,7 @@ impl screen {
         OpenGL.GLUT.glutPostRedisplay();
     }
 }
+
 fn main() {
     let s = screen((128, 160));
     s.invert(10, 10, 20, 20);

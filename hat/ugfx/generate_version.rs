@@ -5,15 +5,16 @@ use PIL::{Image};
 use PIL::{Image};
 use PIL::{ImageDraw};
 use PIL::{ImageFont};
+
 const ifont: _ = ImageFont::truetype("../font.ttf", 14);
 const version: _ = pypilot.version.strversion;
-println!("{:?} {:?} ","using version", version);
+println!("{:?} {:?} ", "using version", version);
 const size: _ = ifont.getsize(version);
 const image: _ = Image::new("RGBA", size);
 const draw: _ = ImageDraw::Draw(image);
 draw.text((0, 0), version, ifont);
 const data: _ = image.getdata().collect::<Vec<_>>();
-println!("{:?} {:?} {:?} ","len", data.len(), size);
+println!("{:?} {:?} {:?} ", "len", data.len(), size);
 const f: _ = open("pypilot_version.h", "w");
 f.write(("static unsigned int width = %d;
 " % size[0]));

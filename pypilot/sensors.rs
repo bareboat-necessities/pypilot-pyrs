@@ -6,6 +6,7 @@ use gps_filter::*;
 use gpsd::gpsd;
 use resolv::resolv;
 use values::*;
+
 const source_priority: _ = [
     ("gpsd", 1),
     ("servo", 1),
@@ -16,9 +17,10 @@ const source_priority: _ = [
     ("water+wind", 6),
     ("none", 7),
 ]
-.iter()
-.cloned()
-.collect::<HashMap<_, _>>();
+    .iter()
+    .cloned()
+    .collect::<HashMap<_, _>>();
+
 struct Sensor {
     source: ST0,
     rate: ST1,
@@ -77,6 +79,7 @@ impl Sensor {
         ));
     }
 }
+
 struct BaseWind {
     boatimu: ST0,
     direction: ST1,
@@ -142,6 +145,7 @@ impl BaseWind {
         self.wfactor = d;
     }
 }
+
 struct Wind {}
 
 impl Wind {
@@ -149,6 +153,7 @@ impl Wind {
         super(Wind, self).__init__(client, "wind", boatimu);
     }
 }
+
 struct TrueWind {
     wdirection: ST0,
     wfactor: ST1,
@@ -196,6 +201,7 @@ impl TrueWind {
         }
     }
 }
+
 struct APB {
     track: ST0,
     xte: ST1,
@@ -250,6 +256,7 @@ impl APB {
         }
     }
 }
+
 struct gps {
     track: ST0,
     speed: ST1,
@@ -299,6 +306,7 @@ impl gps {
         self.speed.set(false);
     }
 }
+
 struct Water {
     speed: ST0,
     leeway: ST1,
@@ -388,6 +396,7 @@ impl Water {
         self.speed.set(false);
     }
 }
+
 struct Sensors {
     client: ST0,
     nmea: ST1,
@@ -425,9 +434,9 @@ impl Sensors {
             ("apb", self.apb),
             ("water", self.water),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
     }
     fn poll(&self) {
         self.nmea.poll();

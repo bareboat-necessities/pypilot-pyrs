@@ -3,6 +3,7 @@ use std::*;
 
 use pypilot::values::*;
 use sensors::Sensor;
+
 struct Rudder {
     angle: ST0,
     speed: ST1,

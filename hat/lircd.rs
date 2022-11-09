@@ -75,6 +75,7 @@ impl LoadLIRC {
         self.version = version;
     }
 }
+
 struct lirc {
     lastkey: bool,
     lastcount: ST0,
@@ -148,6 +149,7 @@ impl lirc {
         return events;
     }
 }
+
 fn main() {
     let lircd = lirc([("pi.ir", true)].iter().cloned().collect::<HashMap<_, _>>());
     while true {
@@ -159,6 +161,7 @@ fn main() {
         time.sleep(0.02);
     }
 }
+
 fn main() {
     main();
 }

@@ -3,7 +3,9 @@ use std::*;
 
 use pilot::AutopilotPilot;
 use pypilot::resolv::resolv;
+
 const disabled: _ = true;
+
 struct AutotunePilot {
     gains: HashMap<_, _>,
     p_search: ST0,
@@ -43,9 +45,9 @@ impl AutotunePilot {
             ("D", (headingrate + headingraterate)),
             ("FF", ap.heading_command_rate.value),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let command = self.Compute(gain_values);
         if ap.enabled.value {
             ap.servo.command.set(command);
@@ -82,4 +84,5 @@ impl AutotunePilot {
         }
     }
 }
+
 const pilot: _ = AutotunePilot;

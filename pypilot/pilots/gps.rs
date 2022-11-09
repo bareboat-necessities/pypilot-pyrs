@@ -4,7 +4,9 @@ use std::*;
 use pilot::{AutopilotGain, AutopilotPilot};
 use pypilot::autopilot::{resolv, HeadingOffset};
 use pypilot::values::*;
+
 const disabled: _ = true;
+
 struct GPSPilot {
     wind_gps_offset: ST0,
     true_wind_gps_offset: ST1,
@@ -86,13 +88,14 @@ impl GPSPilot {
             ("DD", headingraterate),
             ("FF", ap.heading_command_rate.value),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let command = self.Compute(gain_values);
         if ap.enabled.value {
             ap.servo.command.set(command);
         }
     }
 }
+
 const pilot: _ = GPSPilot;

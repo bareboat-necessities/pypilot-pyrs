@@ -2,75 +2,75 @@ use std::*;
 use std::collections::HashMap;
 
 struct pypilotScopeBase {
-m_splitter1: ST0,
-m_panel2: ST1,
-clValues: ST2,
-glpanel: ST3,
-glArea: ST4,
-bZero: ST5,
-bCenter: ST6,
-bScalePlus: ST7,
-bScaleMinus: ST8,
-bOffsetPlus: ST9,
-bOffsetMinus: ST10,
-tbFreeze: ST11,
-bReset: ST12,
-cbfftw: ST13,
-m_staticText1: ST14,
-sTime: ST15,
-bClose: ST16,
+    m_splitter1: ST0,
+    m_panel2: ST1,
+    clValues: ST2,
+    glpanel: ST3,
+    glArea: ST4,
+    bZero: ST5,
+    bCenter: ST6,
+    bScalePlus: ST7,
+    bScaleMinus: ST8,
+    bOffsetPlus: ST9,
+    bOffsetMinus: ST10,
+    tbFreeze: ST11,
+    bReset: ST12,
+    cbfftw: ST13,
+    m_staticText1: ST14,
+    sTime: ST15,
+    bClose: ST16,
 }
 
 impl pypilotScopeBase {
-fn __init__<T0>(&self, parent: T0)  {
-wx.Frame.__init__(self, parent, wx.ID_ANY, _("pypilot Scope"), wx.DefaultPosition, wx.Size(1024, 600), (wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL));
-self.SetSizeHints(wx.DefaultSize, wx.DefaultSize);
-let fgSizer3 = wx.FlexGridSizer(0, 1, 0, 0);
-fgSizer3.AddGrowableCol(0);
-fgSizer3.AddGrowableRow(0);
-fgSizer3.SetFlexibleDirection(wx.BOTH);
-fgSizer3.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
-self.m_splitter1 = wx.SplitterWindow(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.SP_3D);
-self.m_splitter1.Bind(wx.EVT_IDLE, self.m_splitter1OnIdle);
-self.m_panel2 = wx.Panel(self.m_splitter1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL);
-let fgSizer51 = wx.FlexGridSizer(0, 2, 0, 0);
-fgSizer51.AddGrowableCol(0);
-fgSizer51.AddGrowableRow(0);
-fgSizer51.SetFlexibleDirection(wx.BOTH);
-fgSizer51.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
-let clValuesChoices = vec![];
-self.clValues = wx.CheckListBox(self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, clValuesChoices, 0);
-fgSizer51.Add(self.clValues, 0, (wx.ALL | wx.EXPAND), 5);
-self.m_panel2.SetSizer(fgSizer51);
-self.m_panel2.Layout();
-fgSizer51.Fit(self.m_panel2);
-self.glpanel = wx.Panel(self.m_splitter1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL);
-let fgSizer41 = wx.FlexGridSizer(0, 2, 0, 0);
-fgSizer41.AddGrowableCol(0);
-fgSizer41.AddGrowableRow(0);
-fgSizer41.SetFlexibleDirection(wx.BOTH);
-fgSizer41.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
-self.glArea = wx.glcanvas.GLCanvas(self.glpanel);
-fgSizer41.Add(self.glArea, 0, (wx.ALL | wx.EXPAND), 5);
-self.glpanel.SetSizer(fgSizer41);
-self.glpanel.Layout();
-fgSizer41.Fit(self.glpanel);
-self.m_splitter1.SplitVertically(self.m_panel2, self.glpanel, 250);
-fgSizer3.Add(self.m_splitter1, 1, wx.EXPAND, 5);
-let fgSizer5 = wx.FlexGridSizer(1, 0, 0, 0);
-fgSizer5.SetFlexibleDirection(wx.BOTH);
-fgSizer5.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
-self.bZero = wx.Button(self, wx.ID_ANY, _("Zero"), wx.DefaultPosition, wx.DefaultSize, 0);
-fgSizer5.Add(self.bZero, 0, wx.ALL, 5);
-self.bCenter = wx.Button(self, wx.ID_ANY, _("Center"), wx.DefaultPosition, wx.DefaultSize, 0);
-fgSizer5.Add(self.bCenter, 0, wx.ALL, 5);
-self.bScalePlus = wx.Button(self, wx.ID_ANY, _("Scale +"), wx.DefaultPosition, wx.DefaultSize, 0);
-fgSizer5.Add(self.bScalePlus, 0, wx.ALL, 5);
-self.bScaleMinus = wx.Button(self, wx.ID_ANY, _("Scale -"), wx.DefaultPosition, wx.DefaultSize, 0);
-fgSizer5.Add(self.bScaleMinus, 0, wx.ALL, 5);
-self.bOffsetPlus = wx.Button(self, wx.ID_ANY, _("Offset /\"), wx.DefaultPosition, wx.DefaultSize, 0);
+    fn __init__<T0>(&self, parent: T0) {
+        wx.Frame.__init__(self, parent, wx.ID_ANY, _("pypilot Scope"), wx.DefaultPosition, wx.Size(1024, 600), (wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL));
+        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize);
+        let fgSizer3 = wx.FlexGridSizer(0, 1, 0, 0);
+        fgSizer3.AddGrowableCol(0);
+        fgSizer3.AddGrowableRow(0);
+        fgSizer3.SetFlexibleDirection(wx.BOTH);
+        fgSizer3.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
+        self.m_splitter1 = wx.SplitterWindow(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.SP_3D);
+        self.m_splitter1.Bind(wx.EVT_IDLE, self.m_splitter1OnIdle);
+        self.m_panel2 = wx.Panel(self.m_splitter1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL);
+        let fgSizer51 = wx.FlexGridSizer(0, 2, 0, 0);
+        fgSizer51.AddGrowableCol(0);
+        fgSizer51.AddGrowableRow(0);
+        fgSizer51.SetFlexibleDirection(wx.BOTH);
+        fgSizer51.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
+        let clValuesChoices = vec![];
+        self.clValues = wx.CheckListBox(self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, clValuesChoices, 0);
+        fgSizer51.Add(self.clValues, 0, (wx.ALL | wx.EXPAND), 5);
+        self.m_panel2.SetSizer(fgSizer51);
+        self.m_panel2.Layout();
+        fgSizer51.Fit(self.m_panel2);
+        self.glpanel = wx.Panel(self.m_splitter1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL);
+        let fgSizer41 = wx.FlexGridSizer(0, 2, 0, 0);
+        fgSizer41.AddGrowableCol(0);
+        fgSizer41.AddGrowableRow(0);
+        fgSizer41.SetFlexibleDirection(wx.BOTH);
+        fgSizer41.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
+        self.glArea = wx.glcanvas.GLCanvas(self.glpanel);
+        fgSizer41.Add(self.glArea, 0, (wx.ALL | wx.EXPAND), 5);
+        self.glpanel.SetSizer(fgSizer41);
+        self.glpanel.Layout();
+        fgSizer41.Fit(self.glpanel);
+        self.m_splitter1.SplitVertically(self.m_panel2, self.glpanel, 250);
+        fgSizer3.Add(self.m_splitter1, 1, wx.EXPAND, 5);
+        let fgSizer5 = wx.FlexGridSizer(1, 0, 0, 0);
+        fgSizer5.SetFlexibleDirection(wx.BOTH);
+        fgSizer5.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED);
+        self.bZero = wx.Button(self, wx.ID_ANY, _("Zero"), wx.DefaultPosition, wx.DefaultSize, 0);
+        fgSizer5.Add(self.bZero, 0, wx.ALL, 5);
+        self.bCenter = wx.Button(self, wx.ID_ANY, _("Center"), wx.DefaultPosition, wx.DefaultSize, 0);
+        fgSizer5.Add(self.bCenter, 0, wx.ALL, 5);
+        self.bScalePlus = wx.Button(self, wx.ID_ANY, _("Scale +"), wx.DefaultPosition, wx.DefaultSize, 0);
+        fgSizer5.Add(self.bScalePlus, 0, wx.ALL, 5);
+        self.bScaleMinus = wx.Button(self, wx.ID_ANY, _("Scale -"), wx.DefaultPosition, wx.DefaultSize, 0);
+        fgSizer5.Add(self.bScaleMinus, 0, wx.ALL, 5);
+        self.bOffsetPlus = wx.Button(self, wx.ID_ANY, _("Offset /\"), wx.DefaultPosition, wx.DefaultSize, 0);
 fgSizer5.Add(self.bOffsetPlus, 0, wx.ALL, 5);
-self.bOffsetMinus = wx.Button(self, wx.ID_ANY, _("Offset \/"), wx.DefaultPosition, wx.DefaultSize, 0);
+self.bOffsetMinus = wx.Button(self, wx.ID_ANY, _("Offset \ / "), wx.DefaultPosition, wx.DefaultSize, 0);
 fgSizer5.Add(self.bOffsetMinus, 0, wx.ALL, 5);
 self.tbFreeze = wx.ToggleButton(self, wx.ID_ANY, _("Freeze"), wx.DefaultPosition, wx.DefaultSize, 0);
 fgSizer5.Add(self.tbFreeze, 0, wx.ALL, 5);

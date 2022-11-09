@@ -3,6 +3,7 @@ use std::*;
 
 use resolv::*;
 use values::*;
+
 struct TackSensorLog {
     log: Vec<_>,
     time: ST0,
@@ -51,6 +52,7 @@ impl TackSensorLog {
         }
     }
 }
+
 struct TackDirection {
     auto: bool,
 }
@@ -78,6 +80,7 @@ impl TackDirection {
         self.auto = true;
     }
 }
+
 struct Tack {
     ap: ST0,
     state: ST1,

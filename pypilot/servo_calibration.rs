@@ -3,6 +3,7 @@ use std::*;
 
 use pypilot::client::pypilotClient;
 use servo::*;
+
 fn fit<T0, T1, RT>(x: T0, n: T1) -> RT {
     let try_dummy = { //unsupported
     };
@@ -29,6 +30,7 @@ fn fit<T0, T1, RT>(x: T0, n: T1) -> RT {
     }
     return (b.collect::<Vec<_>>(), t.pow(0.5));
 }
+
 fn fit_str<T0, RT>(fit: T0) -> RT {
     let mut s = "";
     for o in (0..fit.len()) {
@@ -39,6 +41,7 @@ fn fit_str<T0, RT>(fit: T0) -> RT {
     }
     return s;
 }
+
 fn FitCalibration<T0, RT>(cal: T0) -> RT {
     let mut speeds = vec![];
     let mut commands = vec![];
@@ -70,8 +73,10 @@ fn FitCalibration<T0, RT>(cal: T0) -> RT {
         return false;
     }
 }
+
 const period_speed: _ = 0.6;
 const printconsole: _ = false;
+
 fn ServoCalibrationThread<T0, RT>(calibration: T0) -> RT {
     let servo = calibration.servo;
     fn console() {
@@ -410,13 +415,14 @@ fn ServoCalibrationThread<T0, RT>(calibration: T0) -> RT {
         ("Min Speed", min_speed),
         ("Brake Hack", self.brake_hack),
     ]
-    .iter()
-    .cloned()
-    .collect::<HashMap<_, _>>();
+        .iter()
+        .cloned()
+        .collect::<HashMap<_, _>>();
     let f = open((os.getenv("HOME") + "/.pypilot/servocalibration"), "w");
     f.write(json.dumps(cal));
     console("calibration complete");
 }
+
 struct ServoCalibration {
     server: ST0,
     run: ST1,
@@ -501,6 +507,7 @@ impl ServoCalibration {
         }
     }
 }
+
 fn round_any<T0, T1, RT>(x: T0, n: T1) -> RT {
     if type_(x) == type_(HashMap::new()) {
         let r = HashMap::new();
@@ -520,6 +527,7 @@ fn round_any<T0, T1, RT>(x: T0, n: T1) -> RT {
         }
     }
 }
+
 fn main() {
     use serialprobe;
     println!("{:?} ", "Servo Server");

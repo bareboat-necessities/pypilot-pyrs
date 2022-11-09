@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::*;
 
 use pypilot::client::pypilotClient;
+
 fn round3<T0, RT>(value: T0) -> RT {
     if type_(value) == type_(vec![]) {
         return value.iter().map(round3).collect::<Vec<_>>();
@@ -20,6 +21,7 @@ fn round3<T0, RT>(value: T0) -> RT {
     }
     return value;
 }
+
 struct MainFrame {
     client: ST0,
     connected: bool,
@@ -271,11 +273,13 @@ impl MainFrame {
         }
     }
 }
+
 fn main() {
     let app = wx.App();
     MainFrame().Show();
     app.MainLoop();
 }
+
 fn main() {
     main();
 }

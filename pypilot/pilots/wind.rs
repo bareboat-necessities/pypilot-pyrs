@@ -4,6 +4,7 @@ use std::*;
 use pilot::{AutopilotGain, AutopilotPilot};
 use pypilot::autopilot::{resolv, HeadingOffset};
 use pypilot::values::*;
+
 struct WindPilot {
     gps_wind_offset: ST0,
     last_wind_speed: ST1,
@@ -100,13 +101,14 @@ impl WindPilot {
             ("DD", headingraterate),
             ("WG", windgust),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let command = self.Compute(gain_values);
         if ap.enabled.value {
             ap.servo.command.set(command);
         }
     }
 }
+
 const pilot: _ = WindPilot;

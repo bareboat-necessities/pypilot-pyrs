@@ -3,6 +3,7 @@ use std::*;
 
 use pypilot::resolv::resolv;
 use pypilot::values::*;
+
 struct AutopilotGain {}
 
 impl AutopilotGain {
@@ -11,6 +12,7 @@ impl AutopilotGain {
         self.info["AutopilotGain"] = true;
     }
 }
+
 struct AutopilotPilot {
     name: ST0,
     ap: ST1,
@@ -44,9 +46,9 @@ impl AutopilotPilot {
             ("sensor", self.register(SensorValue, (name + "gain"))),
             ("compute", compute),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
     }
     fn PosGain<T0, T1, T2>(&self, name: T0, default: T1, max_val: T2) {
         self.Gain(name, default, 0, max_val);

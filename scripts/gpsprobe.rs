@@ -89,6 +89,7 @@ impl GpsProbe {
         }
     }
 }
+
 fn main() {
     let gpsprobe = GpsProbe();
     let try_dummy = {
@@ -103,6 +104,7 @@ fn main() {
         println!("{:?} ", "Keyboard interrupt, gpsprobe exit");
     };
 }
+
 fn main() {
     main();
 }

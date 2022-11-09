@@ -2,9 +2,12 @@ use std::collections::HashMap;
 use std::*;
 
 use pilot::AutopilotPilot;
+
 const disabled: _ = true;
+
 use pypilot::values::*;
 use resolv::resolv;
+
 struct vmgTable {
     t: ST0,
     command: ST1,
@@ -73,6 +76,7 @@ impl vmgTable {
         }
     }
 }
+
 struct VMGPilot {
     gains: HashMap<_, _>,
     vmg: HashMap<_, _>,
@@ -109,9 +113,9 @@ impl VMGPilot {
             ("D", headingrate),
             ("DD", headingraterate),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let command = self.Compute(gain_values);
         if !ap.enabled.value {
             return;
@@ -132,4 +136,5 @@ impl VMGPilot {
         vmg.update_command(ap.heading_command);
     }
 }
+
 const pilot: _ = VMGPilot;

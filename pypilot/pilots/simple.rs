@@ -2,7 +2,9 @@ use std::collections::HashMap;
 use std::*;
 
 use pilot::AutopilotPilot;
+
 const disabled: _ = true;
+
 struct SimplePilot {
     gains: HashMap<_, _>,
 }
@@ -23,13 +25,14 @@ impl SimplePilot {
             ("I", ap.heading_error_int.value),
             ("D", headingrate),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let command = self.Compute(gain_values);
         if ap.enabled.value {
             ap.servo.command.set(command);
         }
     }
 }
+
 const pilot: _ = SimplePilot;

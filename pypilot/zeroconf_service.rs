@@ -2,9 +2,12 @@ use std::collections::HashMap;
 use std::*;
 
 const DEFAULT_PORT: _ = 23322;
+
 use version::strversion;
+
 const retries: _ = 0;
 const zerosocket: _ = socket.socket(socket.AF_INET, socket.SOCK_DGRAM);
+
 fn get_local_addresses<RT>() -> RT {
     //global retries
     let mut addresses = vec![];
@@ -40,11 +43,12 @@ fn get_local_addresses<RT>() -> RT {
             ));
         };
         let except!() = { //unsupported
-             /*pass*/
+            /*pass*/
         };
     }
     return addresses;
 }
+
 struct zeroconf {}
 
 impl zeroconf {
@@ -103,6 +107,7 @@ impl zeroconf {
         }
     }
 }
+
 fn main() {
     let zc = zeroconf();
     zc.run();

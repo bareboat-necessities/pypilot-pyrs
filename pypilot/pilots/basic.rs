@@ -4,6 +4,7 @@ use std::*;
 use pilot::AutopilotPilot;
 use pypilot::values::*;
 use resolv::resolv;
+
 struct BasicPilot {
     gains: HashMap<_, _>,
 }
@@ -31,9 +32,9 @@ impl BasicPilot {
             ("DD", headingraterate),
             ("FF", ap.heading_command_rate.value),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let mut PR = math.sqrt(abs(gain_values["P"]));
         if gain_values["P"] < 0 {
             PR = -(PR);
@@ -45,4 +46,5 @@ impl BasicPilot {
         }
     }
 }
+
 const pilot: _ = BasicPilot;

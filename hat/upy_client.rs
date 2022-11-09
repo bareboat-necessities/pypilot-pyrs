@@ -2,9 +2,11 @@ use std::collections::HashMap;
 use std::*;
 
 const DEFAULT_PORT: _ = 23322;
+
 fn gettime<RT>() -> RT {
     return (time.ticks_us() / 1000000.0);
 }
+
 struct pypilotClient {
     connection: bool,
     connection_in_progress: bool,
@@ -354,6 +356,7 @@ impl pypilotClient {
         /*pass*/
     }
 }
+
 fn main() {
     let client = pypilotClient("192.168.14.1");
     client.watch("imu.frequency", 1.0);
@@ -369,6 +372,7 @@ fn main() {
         }
     }
 }
+
 fn main() {
     main();
 }

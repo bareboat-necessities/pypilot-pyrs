@@ -3,6 +3,7 @@ use std::*;
 
 use pypilot::client::*;
 use pypilot::ui::autopilot_control_ui;
+
 struct AutopilotControl {
     sliderlabels: ST0,
     fgGains: ST1,
@@ -89,9 +90,9 @@ impl AutopilotControl {
             ("wind", wx.BLUE),
             ("true wind", wx.CYAN),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         if self.tbAP.GetValue() && modecolors.iter().any(|&x| x == self.mode) {
             color = modecolors[self.mode];
         } else {
@@ -162,9 +163,9 @@ impl AutopilotControl {
                     ("sliderval", 0),
                     ("sizer", sizer),
                 ]
-                .iter()
-                .cloned()
-                .collect::<HashMap<_, _>>();
+                    .iter()
+                    .cloned()
+                    .collect::<HashMap<_, _>>();
                 self.gains[name] = gain;
                 fn make_ongain<T0, RT>(gain: T0) -> RT {
                     fn do_gain<T0>(event: T0) {
@@ -278,7 +279,7 @@ impl AutopilotControl {
                             value = round(value, 1);
                         };
                         let except!() = { //unsupported
-                             /*pass*/
+                            /*pass*/
                         };
                         self.rudder = value;
                         if !!self.apenabled && self.rudder == self.bCenter.IsShown() {
@@ -293,9 +294,9 @@ impl AutopilotControl {
                                 ("wind", self.rbWind),
                                 ("true wind", self.rbTrueWind),
                             ]
-                            .iter()
-                            .cloned()
-                            .collect::<HashMap<_, _>>();
+                                .iter()
+                                .cloned()
+                                .collect::<HashMap<_, _>>();
                             rb[value].SetValue(true);
                             self.mode = value;
                             self.set_mode_color();
@@ -485,7 +486,7 @@ impl AutopilotControl {
             let x = self.sCommand.ScreenToClient(wx.GetMousePosition()).x;
             let val = (self.sCommand.GetMin()
                 + (((self.sCommand.GetMax() - self.sCommand.GetMin()) * x)
-                    / self.sCommand.GetSize().x));
+                / self.sCommand.GetSize().x));
             self.sCommand.SetValue(val);
         }
     }
@@ -505,11 +506,13 @@ impl AutopilotControl {
         self.Close();
     }
 }
+
 fn main() {
     let app = wx.App();
     AutopilotControl().Show();
     app.MainLoop();
 }
+
 fn main() {
     main();
 }

@@ -3,7 +3,9 @@ use std::*;
 
 use intellect::*;
 use pilot::{AutopilotGain, AutopilotPilot};
+
 const disabled: _ = true;
+
 fn build_actions<T0, T1, T2, RT>(current: T0, period_count: T1, count: T2) -> RT {
     if count <= 0 {
         return vec![];
@@ -27,6 +29,7 @@ fn build_actions<T0, T1, T2, RT>(current: T0, period_count: T1, count: T2) -> RT
     ret += actions(0);
     return ret;
 }
+
 struct TFliteModel {
     conf: ST0,
     interpreter: ST1,
@@ -115,6 +118,7 @@ impl TFliteModel {
         return actions[besti];
     }
 }
+
 struct LearningPilot {
     P: ST0,
     D: ST1,
@@ -169,4 +173,5 @@ impl LearningPilot {
         }
     }
 }
+
 const pilot: _ = LearningPilot;

@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::*;
 
 use pilot::AutopilotPilot;
+
 struct AbsolutePilot {
     gains: HashMap<_, _>,
 }
@@ -30,13 +31,14 @@ impl AbsolutePilot {
             ("DD", headingraterate),
             ("FF", ap.heading_command_rate.value),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>();
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>();
         let command = self.Compute(gain_values);
         if ap.enabled.value {
             ap.servo.position_command.set(command);
         }
     }
 }
+
 const pilot: _ = AbsolutePilot;

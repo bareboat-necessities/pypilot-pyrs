@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::*;
 
 use OpenGL::GL::*;
+
 fn GLArray<T0, RT>(points: T0) -> RT {
     let vpoints = (GLfloat * (3 * points.len()))();
     let mut i = 0;
@@ -13,6 +14,7 @@ fn GLArray<T0, RT>(points: T0) -> RT {
     }
     return vpoints;
 }
+
 struct Shape {
     array: ST0,
 }
@@ -28,6 +30,7 @@ impl Shape {
         glDisableClientState(GL_VERTEX_ARRAY);
     }
 }
+
 struct Spherical {}
 
 impl Spherical {
@@ -61,6 +64,7 @@ impl Spherical {
         super(Spherical, self).__init__(vertexes);
     }
 }
+
 struct Conical {}
 
 impl Conical {
@@ -95,6 +99,7 @@ impl Conical {
         super(Conical, self).__init__(vertexes);
     }
 }
+
 struct Plane {}
 
 impl Plane {

@@ -2,11 +2,13 @@ use std::collections::HashMap;
 use std::*;
 
 const filename: _ = "config";
+
 fn config<T0, T1>(key: T0, value: T1) {
     let config = read_config();
     config[key] = value;
     write_config(config);
 }
+
 fn read_config<RT>() -> RT {
     let mut config = HashMap::new();
     let mut failed = false;
@@ -64,6 +66,7 @@ fn read_config<RT>() -> RT {
     }
     return config;
 }
+
 fn write_config<T0>(config: T0) {
     let f = open(filename, "w");
     for key in config {

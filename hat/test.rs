@@ -4,6 +4,7 @@ use std::*;
 use arduino::arduino;
 use pypilot::servo::Servo;
 use pypilot::{client, server};
+
 fn main() {
     for i in (0..sys.argv.len()) {
         if sys.argv[i] == "-t" {
@@ -34,9 +35,9 @@ fn main() {
                     .cloned()
                     .collect::<HashMap<_, _>>(),
             )]
-            .iter()
-            .cloned()
-            .collect::<HashMap<_, _>>(),
+                .iter()
+                .cloned()
+                .collect::<HashMap<_, _>>(),
         ),
         ("arduino.nmea.baud", 4800),
         ("arduino.nmea.in", false),
@@ -44,9 +45,9 @@ fn main() {
         ("arduino.ir", true),
         ("arduino.debug", true),
     ]
-    .iter()
-    .cloned()
-    .collect::<HashMap<_, _>>();
+        .iter()
+        .cloned()
+        .collect::<HashMap<_, _>>();
     let a = arduino(config);
     let mut dt = 0;
     let period = 0.0;
@@ -78,6 +79,7 @@ fn main() {
         }
     }
 }
+
 fn main() {
     main();
 }

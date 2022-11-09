@@ -35,6 +35,7 @@ impl tobject {
         return id;
     }
 }
+
 fn translation<T0, T1, T2, T3, RT>(name: T0, path: T1, languages: T2, fallback: T3) -> RT {
     if languages[0] == "en" {
         return tobject(None);

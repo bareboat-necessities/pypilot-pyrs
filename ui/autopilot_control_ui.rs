@@ -440,6 +440,7 @@ impl AutopilotControlBase {
         event.Skip();
     }
 }
+
 struct CalibrationDialogBase {
     m_notebook: ST0,
     m_panel3: ST1,

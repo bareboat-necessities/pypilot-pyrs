@@ -9,5 +9,5 @@ let locale_d = (os.path.abspath(os.path.dirname(__file__)) + "/locale");
 gettext.translation("pypilot", locale_d, true).install();
 } else {
 use builtins;
-builtins.__dict__["_"] = |x| x;
+builtins.__dict__["_"] = | x | x;
 }

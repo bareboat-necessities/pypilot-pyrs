@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::*;
 
 use pypilot::client::PypilotClient;
+
 fn unique<T0, RT>(l: T0) -> RT {
     if l.len() < 2 {
         return l;
@@ -11,6 +12,7 @@ fn unique<T0, RT>(l: T0) -> RT {
     }
     return (vec![l[0]] + unique(l[1..]));
 }
+
 fn frange<T0, T1, T2, RT>(min: T0, max: T1, step: T2) -> RT {
     fn each<T0, RT>(val: T0) -> RT {
         if val > max {
@@ -20,6 +22,7 @@ fn frange<T0, T1, T2, RT>(min: T0, max: T1, step: T2) -> RT {
     }
     return each(min);
 }
+
 struct autogain {
     search: ST0,
     variables: ST1,
@@ -40,9 +43,9 @@ impl autogain {
             ("max", 0.12),
             ("step", 0.001),
         ]
-        .iter()
-        .cloned()
-        .collect::<HashMap<_, _>>()];
+            .iter()
+            .cloned()
+            .collect::<HashMap<_, _>>()];
         self.variables = vec!["ap.heading_error", "servo.watts"];
         self.settle_period = 20;
         self.period = 120;
@@ -219,6 +222,7 @@ impl autogain {
         }
     }
 }
+
 fn main() {
     let ag = autogain();
     ag.run();
